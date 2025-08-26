@@ -24,11 +24,20 @@ export default function Login({ onLogin }) {
   };
 
   return (
-    <div>
+    <div className="auth-container">
       <h2>{isRegister ? 'Register' : 'Login'}</h2>
-      <form onSubmit={handleSubmit}>
-        <input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
-        <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
+      <form onSubmit={handleSubmit} className="auth-form">
+        <input
+          placeholder="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
         {isRegister && (
           <>
             <select value={type} onChange={e => setType(e.target.value)}>
@@ -45,7 +54,7 @@ export default function Login({ onLogin }) {
         )}
         <button type="submit">Submit</button>
       </form>
-      <button onClick={() => setIsRegister(!isRegister)}>
+      <button className="toggle-btn" onClick={() => setIsRegister(!isRegister)}>
         {isRegister ? 'Have an account? Login' : 'No account? Register'}
       </button>
     </div>

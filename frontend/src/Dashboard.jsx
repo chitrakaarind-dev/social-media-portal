@@ -17,10 +17,10 @@ export default function Dashboard({ token, onLogout }) {
   }, [token]);
 
   return (
-    <div>
+    <div className="dash-container">
       <h2>Dashboard</h2>
-      <button onClick={onLogout}>Logout</button>
-      <ul>
+      <button className="logout-btn" onClick={onLogout}>Logout</button>
+      <ul className="brand-list">
         {brands.map(b => (
           <li key={b.id}>{b.name}</li>
         ))}
